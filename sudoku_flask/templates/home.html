@@ -1,0 +1,126 @@
+<html>
+	<head>
+       	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<style>
+			.body
+			{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 400px;
+				height: 400px;
+				margin-top: -200px;
+				margin-left: -200px;
+				border-radius: 2px;
+				overflow: hidden;
+				<!--background-image: url("{{ url_for('static', filename='img/new.jpg') }}");-->
+				background-repeat: no-repeat;
+				background-size:100% 100%;
+				background-position: top;
+				color: #333;
+				font-family: "Open Sans", Helvetica, sans-serif;
+			}
+			.container
+			{
+				position:relative;
+				left:20%;
+				
+			}
+			.dropzone
+			{
+				position: absolute;
+				top: 70%;
+				left: 60%;
+				transform: translate(-50%, -50%);
+				width: 200px;
+				height: 200px;
+				align:center;
+				
+			}
+			.dropzone:hover .overlay {
+			    opacity: 1;
+			}
+			.logo
+			{
+				max-width:60%;
+				heigth=50px;
+				
+				
+			}
+			.upload-icon
+			{
+				left:100%;
+				border-radius: 4px;
+				height:120px;
+			}
+			.upload-input 
+			{
+				position: absolute;
+				top: -62px;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+			}
+			.overlay 
+			{
+				position: relative; 
+			    bottom: 30%; 
+				background: rgb(0, 0, 0);
+				background: rgba(0, 0, 0, 0.5); /* Black see-through */
+				color: #f1f1f1; 
+				width: 50%;
+				transition: .5s ease;
+				opacity:0;
+				color: white;
+				font-size: 10px;
+				padding: 10px;
+				text-align: center;
+			}		
+
+			.btn
+			{
+				top:73%;
+				left:32%;
+				position:absolute;
+				display: block;
+				width: 140px;
+				height: 40px;
+				background: darkmagenta;
+				color: #fff;
+				border-radius: 3px;
+				border: 0;
+				box-shadow: 0 3px 0 0 hotpink;
+				transition: all 0.3s ease-in-out;
+				font-size: 14px;
+			}
+			.btn:hover 
+			{
+				background: rebeccapurple;
+				box-shadow: 0 3px 0 0 deeppink;
+			}
+
+		</style>
+	</head>
+	
+<body class="body">	
+	<div class="container">
+		<img src="{{ url_for('static', filename='img/new1.jpg') }}" class="logo"/>
+	</div>	
+	<form method="POST" enctype="multipart/form-data" action="/result">	
+		<div class="dropzone">
+			<img src="{{ url_for('static', filename='img/upload.jpg') }}"  class="upload-icon" />
+			<div class="overlay">BROWSE FROM FILE</div>
+			<input type="file" name="photo" class="upload-input" />
+			
+		</div>
+		<button type="submit" class="btn" name="uploadbutton" >GO</button>
+    </form>
+    
+    
+</body>
+<!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
+</html>
+<!-- NO JS ADDED YET -->

@@ -1,0 +1,50 @@
+</html>
+<head>
+
+    <meta charset ="UTF-8">
+    <title>Pokemon stats</title>
+    <style>
+    *{
+        margin :0;
+        padding:0;
+        box-sizing:"border-box";
+    }
+    html
+    {
+        font-size:15px;
+        font-family:"Lato",Arial, sans-serif;
+    }
+    h1 
+    {
+        top : 10%;
+        font-weight: bold;
+        text-transform: capitalize;
+        text-shadow: 2px 2px;
+        text-align: center;
+    }
+    .result
+	{
+	position: absolute;
+	top: 20%;
+	left: 40%;
+	font-weight: bold;
+	font-size: 20px;
+	}
+    
+	
+    </style>
+
+</head>
+
+<body>
+  <h1>SOLUTION FOR YOUR PUZZLE</h1>
+   
+   <div class="result">
+  
+   {% for line in Solution%}
+   {{line}}</br> 
+   {%endfor%} 
+     
+   </div>
+</body>
+</html>
